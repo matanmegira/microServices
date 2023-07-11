@@ -2,12 +2,11 @@
 
 const express = require('express');
 const { setupRabbitMQ } = require('./rabbitmq.service');
-const {setValue}  = require('./redis.service');
 const app = express();
 
 app.use(express.json());
 
-app.post('/publish', async (req, res) => {
+app.post('/produce', async (req, res) => {
     console.log(12)
   const { message } = req.body;
 
@@ -27,6 +26,6 @@ app.post('/publish', async (req, res) => {
   }
 });
 
-app.listen(3002, () => {
-  console.log('Server listening on port 3000');
+app.listen(3004, () => {
+  console.log('Server listening on port 3004');
 });
