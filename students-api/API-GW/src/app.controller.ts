@@ -30,10 +30,11 @@ export class AppController {
   async generateCertificates(@Param('classId') classId) {
     console.log(classId);
     const attendanceReports = (await axios.get(`http://localhost:3001/attendance/${classId}`, {})).data;
-    console.log(attendanceReports);
+    console.log("attendanceReports");
+    console.log(attendanceReports)
 
     const policyId = (await axios.get(`http://localhost:3005/policy/${classId}`, {})).data;
-    console.log(policyId);
+    console.log("policyId: " + policyId);
     
     const res = await axios.post('http://localhost:3004/produce', {
         message: {

@@ -11,13 +11,7 @@ app.post('/produce', async (req, res) => {
   const { message } = req.body;
 
   try {
-    // const channel = await setupRabbitMQ();
-
-    // const queue = 'my_queue'; // Replace with your queue name
-
-    // channel.sendToQueue(queue, Buffer.from(message), { persistent: true });
-
-    // console.log('Message published:', message);
+    // const tsage published:', message);
 
     res.sendStatus(200);
   } catch (error) {
