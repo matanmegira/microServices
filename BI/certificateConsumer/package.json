@@ -1,0 +1,23 @@
+{
+  "name": "certificate-consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matanmegira/microServices.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matanmegira/microServices/issues"
+  },
+  "homepage": "https://github.com/matanmegira/microServices#readme",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "redis": "^4.6.7"
+  }
+}
