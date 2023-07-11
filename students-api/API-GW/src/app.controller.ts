@@ -29,21 +29,20 @@ export class AppController {
   @Post('generateCertificates/:classId')
   async generateCertificates(@Param('classId') classId) {
     console.log(classId);
-    const attendanceReports = await axios.get(`http://localhost:3001/attendance/${classId}`, {});
+    const attendanceReports = (await axios.get(`http://localhost:3001/attendance/${classId}`, {})).data;
     console.log(attendanceReports);
 
-    const policyId = await axios.get(`http://localhost:3005/policy/${classId}`, {});
+    const policyId = (await axios.get(`http://localhost:3005/policy/${classId}`, {})).data;
     console.log(policyId);
     
-    // const res = await axios.post('http://localhost:3004/produce', {
-    //     message: {
-    //         policyId,
-    //         attendanceReports
-    //     }
-    // })
+    const res = await axios.post('http://localhost:3004/produce', {
+        message: {
+            policyId,
+            attendanceReports: attendanceReports
+        }
+    })
 
-
-    return true;
+    return "class validation sent to queue";
   }
   
 }
