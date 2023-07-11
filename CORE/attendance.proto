@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service AttendanceService {
+  rpc GetClassReport(GetClassReportRequest) returns (GetClassReportResponse) {}
+}
+
+message GetClassReportRequest {
+  int32 class_id = 1;
+}
+
+message GetClassReportResponse {
+  repeated StudentAttendance student_attendance = 1;
+}
+
+message StudentAttendance {
+  int32 student_id = 1;
+  string status = 2;
