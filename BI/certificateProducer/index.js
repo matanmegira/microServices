@@ -20,8 +20,6 @@ app.post('/publish', async (req, res) => {
 
     // console.log('Message published:', message);
 
-    setValue("key","value");
-
     res.sendStatus(200);
   } catch (error) {
     console.error('Failed to publish message:', error);
